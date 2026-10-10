@@ -1,0 +1,31 @@
+services:
+  endpoint:
+    image: python:3.12-alpine
+    volumes:
+      - ./endpoint.py:/endpoint.py:ro
+    command: ["python", "/endpoint.py"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1',3333),1).close()"]
+      interval: 1s
+      timeout: 2s
+      retries: 20
+  driver112:
+    build:
+      context: .
+      args:
+        DRIVER_VERSION: 1.1.2.RELEASE
+    depends_on:
+      endpoint:
+        condition: service_healthy
+    mem_limit: 256m
+    cpus: 1.0
+  driver113:
+    build:
+      context: .
+      args:
+        DRIVER_VERSION: 1.1.3.RELEASE
+    depends_on:
+      endpoint:
+        condition: service_healthy
+    mem_limit: 256m
+    cpus: 1.0
