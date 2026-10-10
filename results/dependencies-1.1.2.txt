@@ -1,0 +1,40 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< example:r2dbc-dns-leak-repro >--------------------
+[INFO] Building r2dbc-dns-leak-repro 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.8.1:tree (default-cli) @ r2dbc-dns-leak-repro ---
+[INFO] example:r2dbc-dns-leak-repro:jar:1.0-SNAPSHOT
+[INFO] +- org.postgresql:r2dbc-postgresql:jar:1.1.2.RELEASE:compile
+[INFO] |  +- io.r2dbc:r2dbc-spi:jar:1.0.0.RELEASE:compile
+[INFO] |  +- com.ongres.scram:scram-client:jar:3.2:compile
+[INFO] |  |  +- com.ongres.stringprep:saslprep:jar:2.2:compile
+[INFO] |  |  \- com.ongres.stringprep:stringprep:jar:2.2:compile
+[INFO] |  \- com.ongres.scram:scram-common:jar:3.2:compile
+[INFO] +- io.projectreactor.netty:reactor-netty-core:jar:1.1.22:compile
+[INFO] |  +- io.netty:netty-handler:jar:4.1.112.Final:compile
+[INFO] |  |  +- io.netty:netty-common:jar:4.1.112.Final:compile
+[INFO] |  |  +- io.netty:netty-resolver:jar:4.1.112.Final:compile
+[INFO] |  |  +- io.netty:netty-buffer:jar:4.1.112.Final:compile
+[INFO] |  |  +- io.netty:netty-transport:jar:4.1.112.Final:compile
+[INFO] |  |  +- io.netty:netty-transport-native-unix-common:jar:4.1.112.Final:compile
+[INFO] |  |  \- io.netty:netty-codec:jar:4.1.112.Final:compile
+[INFO] |  +- io.netty:netty-handler-proxy:jar:4.1.112.Final:compile
+[INFO] |  |  +- io.netty:netty-codec-socks:jar:4.1.112.Final:compile
+[INFO] |  |  \- io.netty:netty-codec-http:jar:4.1.112.Final:compile
+[INFO] |  +- io.netty:netty-resolver-dns:jar:4.1.112.Final:compile
+[INFO] |  |  \- io.netty:netty-codec-dns:jar:4.1.112.Final:compile
+[INFO] |  +- io.netty:netty-resolver-dns-native-macos:jar:osx-x86_64:4.1.112.Final:compile
+[INFO] |  |  \- io.netty:netty-resolver-dns-classes-macos:jar:4.1.112.Final:compile
+[INFO] |  \- io.netty:netty-transport-native-epoll:jar:linux-x86_64:4.1.112.Final:compile
+[INFO] |     \- io.netty:netty-transport-classes-epoll:jar:4.1.112.Final:compile
+[INFO] \- io.projectreactor:reactor-core:jar:3.7.12:compile
+[INFO]    \- org.reactivestreams:reactive-streams:jar:1.0.4:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.995 s
+[INFO] Finished at: 2026-10-10T13:24:19Z
+[INFO] ------------------------------------------------------------------------

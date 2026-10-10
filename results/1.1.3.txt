@@ -1,0 +1,9 @@
+driver=file:/repro/lib/r2dbc-postgresql-1.1.3.RELEASE.jar
+baseline udp4=1 udp6=0
+connections_closed=5 udp4=1 udp6=5
+connections_closed=10 udp4=1 udp6=10
+connections_closed=15 udp4=1 udp6=15
+connections_closed=20 udp4=1 udp6=20
+connections_closed=25 udp4=1 udp6=25
+connections_closed=30 udp4=1 udp6=30
+after_gc udp4=1 udp6=30
