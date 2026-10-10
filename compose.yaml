@@ -1,15 +1,14 @@
 services:
   endpoint:
-    image: python:3.12-alpine
-    volumes:
-      - ./endpoint.py:/endpoint.py:ro
-    command: ["python", "/endpoint.py"]
+    image: r2dbc-dns-leak-repro:1.1.2
+    entrypoint: ["java", "-Xmx32m", "-cp", "/repro/classes", "TcpEndpoint"]
     healthcheck:
-      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1',3333),1).close()"]
+      test: ["CMD", "bash", "-c", "</dev/tcp/127.0.0.1/3333"]
       interval: 1s
       timeout: 2s
       retries: 20
   driver112:
+    image: r2dbc-dns-leak-repro:1.1.2
     build:
       context: .
       args:
@@ -20,6 +19,7 @@ services:
     mem_limit: 256m
     cpus: 1.0
   driver113:
+    image: r2dbc-dns-leak-repro:1.1.3
     build:
       context: .
       args:
